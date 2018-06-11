@@ -22,6 +22,10 @@ class MusicLibraryController
       case
       when command == "list songs"
         list_songs
+      when command == "list artists"
+        list_artists
+      when command == "list_genres"
+        list_genres
       end
     end
   end
