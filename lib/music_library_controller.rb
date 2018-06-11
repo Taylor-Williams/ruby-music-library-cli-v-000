@@ -6,4 +6,8 @@ class MusicLibraryController
     musim = MusicImporter.new(@path)
     musim.import
   end
+
+  def call
+    puts "Welcome to your music library!"
+  end
 end
