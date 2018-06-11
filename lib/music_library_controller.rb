@@ -20,5 +20,9 @@ class MusicLibraryController
     while (command = gets.strip.downcase) != "exit"
 
     end
+
+    def list_songs
+      Song.all
+    end
   end
 end
