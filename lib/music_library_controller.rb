@@ -21,7 +21,7 @@ class MusicLibraryController
     while (command = gets.strip.downcase) != "exit"
 
     end
-
+  end
     def list_songs
       Song.all.sort_by{|s| s.name}.each_with_index{|s, i| puts "#{i + 1}. #{s.artist.name} - #{s.name} - #{s.genre.name}"}
     end
@@ -39,7 +39,6 @@ class MusicLibraryController
       artist = gets.strip
       if artist = Artist.find_by_name(artist)
         artist.songs.sort_by{|s| s.name}.each_with_index{|s, i| "#{i + 1}. #{s.name} - #{s.genre}"}
-      else
+      end
     end
-  end
 end
