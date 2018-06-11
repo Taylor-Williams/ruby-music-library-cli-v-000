@@ -4,5 +4,6 @@ class MusicLibraryController
   def initialize(path = "./db/mp3s")
     @path = path
     musim = MusicImporter.new(@path)
+    musim.import
   end
 end
