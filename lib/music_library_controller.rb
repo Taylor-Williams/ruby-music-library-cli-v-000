@@ -24,7 +24,7 @@ class MusicLibraryController
         list_songs
       when command == "list artists"
         list_artists
-      when command == "list_genres"
+      when command == "list genres"
         list_genres
       end
     end
