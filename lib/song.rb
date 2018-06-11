@@ -20,6 +20,7 @@ class Song
   end
 
   def genre=(genre)
+    genre = Genre.find_or_create_by_name(genre) if genre.class.name != "Genre"
     @genre = genre
     genre.songs << self if !genre.songs.include?(self)
   end
