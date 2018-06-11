@@ -29,6 +29,10 @@ class Song
     @@all
   end
 
+  def self.create_from_filename(file)
+    self.new_from_filename
+  end
+
   def self.new_from_filename(file)
     parsed = file.split(" - ")
     song = self.new(parsed[1], parsed[0], parsed[2].split(".mp3")[0])
