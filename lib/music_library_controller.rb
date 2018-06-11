@@ -40,7 +40,7 @@ class MusicLibraryController
       if artist = Artist.find_by_name(artist)
         artist.songs.sort_by{|s| s.name}.each_with_index{|s, i| "#{i + 1}. #{s.name} - #{s.genre}"}
       else
-        list_songs_by_artist
+        puts "Please enter the name of an artist:"
       end
     end
   end
