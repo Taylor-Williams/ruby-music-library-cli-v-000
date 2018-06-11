@@ -14,6 +14,7 @@ class Song
   end
 
   def artist=(artist)
+    puts artist.class.name
     artist = Artist.find_or_create_by_name(artist) if !artist.class.name == "Artist"
     @artist = artist
     artist.add_song(self)
