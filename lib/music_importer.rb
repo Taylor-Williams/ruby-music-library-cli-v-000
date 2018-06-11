@@ -6,8 +6,8 @@ class MusicImporter
   end
 
   def files
-    @files = Dir.glob("#{path}/*")
-    @files.map { |f| f.split("#{path}/")[1] }
+    files = Dir.glob("#{path}/*")
+    files.map { |f| f.split("#{path}/")[1] }
   end
 
   def import
