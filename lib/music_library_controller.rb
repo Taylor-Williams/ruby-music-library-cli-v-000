@@ -24,22 +24,22 @@ class MusicLibraryController
   end
 
   def list_songs
-      Song.all.sort_by{|s| s.name}.each_with_index{|s, i| puts "#{i + 1}. #{s.artist.name} - #{s.name} - #{s.genre.name}"}
-    end
+    Song.all.sort_by{|s| s.name}.each_with_index{|s, i| puts "#{i + 1}. #{s.artist.name} - #{s.name} - #{s.genre.name}"}
+  end
 
   def list_artists
-      Artist.all.sort_by{|a| a.name}.each_with_index{|a, i| puts "#{i + 1}. #{a.name}"}
-    end
+    Artist.all.sort_by{|a| a.name}.each_with_index{|a, i| puts "#{i + 1}. #{a.name}"}
+  end
 
   def list_genres
-      Genre.all.sort_by{|g| g.name}.each_with_index{|g, i| puts "#{i + 1}. #{g.name}"}
-    end
+    Genre.all.sort_by{|g| g.name}.each_with_index{|g, i| puts "#{i + 1}. #{g.name}"}
+  end
 
   def list_songs_by_artist
-      puts "Please enter the name of an artist:"
-      artist = gets.strip
-      if artist = Artist.find_by_name(artist)
-        artist.songs.sort_by{|s| s.name}.each_with_index{|s, i| puts "#{i + 1}. #{s.name} - #{s.genre.name}"}
-      end
+    puts "Please enter the name of an artist:"
+    artist = gets.strip
+    if artist = Artist.find_by_name(artist)
+      artist.songs.sort_by{|s| s.name}.each_with_index{|s, i| puts "#{i + 1}. #{s.name} - #{s.genre.name}"}
     end
+  end
 end
