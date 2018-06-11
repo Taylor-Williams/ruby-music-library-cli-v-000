@@ -5,10 +5,7 @@ module Concerns
     end
 
     def find_or_create_by_name(name)
-      if song = self.find_by_name(name)
-        song
-      else
-        song = self.create(name)
+      self.create(name) if !self.find_by_name(name)
       end
       song
     end
