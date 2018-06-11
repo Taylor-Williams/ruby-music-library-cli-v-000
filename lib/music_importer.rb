@@ -9,4 +9,8 @@ class MusicImporter
     @files = Dir.glob("#{path}/*")
     @files.map { |f| f.split("#{path}/")[1] }
   end
+
+  def import
+    @files.each{|s| Song.new_from_filename(s)}
+  end
 end
