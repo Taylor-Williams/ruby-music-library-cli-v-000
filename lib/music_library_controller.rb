@@ -3,5 +3,6 @@ class MusicLibraryController
 
   def initialize(path)
     @path = path
+    musim = MusicImporter.new(@path)
   end
 end
