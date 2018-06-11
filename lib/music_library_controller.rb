@@ -22,19 +22,19 @@ class MusicLibraryController
 
     end
   end
-    def list_songs
+  def list_songs
       Song.all.sort_by{|s| s.name}.each_with_index{|s, i| puts "#{i + 1}. #{s.artist.name} - #{s.name} - #{s.genre.name}"}
     end
 
-    def list_artists
+  def list_artists
       Artist.all.sort_by{|a| a.name}.each_with_index{|a, i| puts "#{i + 1}. #{a.name}"}
     end
 
-    def list_genres
+  def list_genres
       Genre.all.sort_by{|g| g.name}.each_with_index{|g, i| puts "#{i + 1}. #{g.name}"}
     end
 
-    def list_songs_by_artist
+  def list_songs_by_artist
       puts "Please enter the name of an artist:"
       artist = gets.strip
       if artist = Artist.find_by_name(artist)
